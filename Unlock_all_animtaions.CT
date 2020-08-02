@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="31">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>35</ID>
+      <Description>"Unlock all animations"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{ Game   : NBA2K20.exe
+  Version:
+  Date   : 2019-09-19
+  Author : Limno
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+aobscanmodule(MCDONGZUO,NBA2K20.exe,39 07 BB 01 00 00 00) // should be unique
+MCDONGZUO-2:
+db eb
+MCDONGZUO+2a:
+db 90 90 90 90
+registersymbol(MCDONGZUO)
+
+[DISABLE]
+MCDONGZUO-2:
+db 75
+MCDONGZUO+2a:
+db 41 0f 44 de
+
+unregistersymbol(MCDONGZUO)
+{
+// ORIGINAL CODE - INJECTION POINT: "NBA2K20.exe"+5CDD1A
+
+"NBA2K20.exe"+5CDCED: 83 F8 03                 -  cmp eax,03
+"NBA2K20.exe"+5CDCF0: 75 63                    -  jne NBA2K20.exe+5CDD55
+"NBA2K20.exe"+5CDCF2: B1 05                    -  mov cl,05
+"NBA2K20.exe"+5CDCF4: E8 B7 B8 0E 01           -  call NBA2K20.exe+16B95B0
+"NBA2K20.exe"+5CDCF9: 44 89 64 24 30           -  mov [rsp+30],r12d
+"NBA2K20.exe"+5CDCFE: 41 B9 F6 16 0A 6A        -  mov r9d,6A0A16F6
+"NBA2K20.exe"+5CDD04: C7 44 24 28 08 00 00 00  -  mov [rsp+28],00000008
+"NBA2K20.exe"+5CDD0C: 45 33 C0                 -  xor r8d,r8d
+"NBA2K20.exe"+5CDD0F: 48 8B D0                 -  mov rdx,rax
+"NBA2K20.exe"+5CDD12: C7 44 24 20 62 06 00 00  -  mov [rsp+20],00000662
+// ---------- INJECTING HERE ----------
+"NBA2K20.exe"+5CDD1A: B9 20 02 00 00           -  mov ecx,00000220
+// ---------- DONE INJECTING  ----------
+"NBA2K20.exe"+5CDD1F: E8 5C 87 6D 01           -  call NBA2K20.exe+1CA6480
+"NBA2K20.exe"+5CDD24: 48 8B D0                 -  mov rdx,rax
+"NBA2K20.exe"+5CDD27: 48 85 C0                 -  test rax,rax
+"NBA2K20.exe"+5CDD2A: 74 1E                    -  je NBA2K20.exe+5CDD4A
+"NBA2K20.exe"+5CDD2C: C7 00 03 00 00 00        -  mov [rax],00000003
+"NBA2K20.exe"+5CDD32: 0F 10 45 F7              -  movups xmm0,[rbp-09]
+"NBA2K20.exe"+5CDD36: 0F 11 40 08              -  movups [rax+08],xmm0
+"NBA2K20.exe"+5CDD3A: 0F 10 4D 07              -  movups xmm1,[rbp+07]
+"NBA2K20.exe"+5CDD3E: 0F 11 48 18              -  movups [rax+18],xmm1
+"NBA2K20.exe"+5CDD42: 8B 45 17                 -  mov eax,[rbp+17]
+}
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>36</ID>
+      <Description>"Unlock all animations #2"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{ Game   : NBA2K20.exe
+  Version: 
+  Date   : 2019-09-19
+  Author : Limno
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+aobscanmodule(MCDONGZUO,NBA2K20.exe,39 07 BB 01 00 00 00) // should be unique
+MCDONGZUO-2:
+db eb
+MCDONGZUO+1c:
+db 90 90 90
+registersymbol(MCDONGZUO)
+
+[DISABLE]
+MCDONGZUO-2:
+db 75
+MCDONGZUO+1c:
+db 0f 44 dd
+
+unregistersymbol(MCDONGZUO)
+{
+// ORIGINAL CODE - INJECTION POINT: "NBA2K20.exe"+5CDD1A
+
+"NBA2K20.exe"+5CDCED: 83 F8 03                 -  cmp eax,03
+"NBA2K20.exe"+5CDCF0: 75 63                    -  jne NBA2K20.exe+5CDD55
+"NBA2K20.exe"+5CDCF2: B1 05                    -  mov cl,05
+"NBA2K20.exe"+5CDCF4: E8 B7 B8 0E 01           -  call NBA2K20.exe+16B95B0
+"NBA2K20.exe"+5CDCF9: 44 89 64 24 30           -  mov [rsp+30],r12d
+"NBA2K20.exe"+5CDCFE: 41 B9 F6 16 0A 6A        -  mov r9d,6A0A16F6
+"NBA2K20.exe"+5CDD04: C7 44 24 28 08 00 00 00  -  mov [rsp+28],00000008
+"NBA2K20.exe"+5CDD0C: 45 33 C0                 -  xor r8d,r8d
+"NBA2K20.exe"+5CDD0F: 48 8B D0                 -  mov rdx,rax
+"NBA2K20.exe"+5CDD12: C7 44 24 20 62 06 00 00  -  mov [rsp+20],00000662
+// ---------- INJECTING HERE ----------
+"NBA2K20.exe"+5CDD1A: B9 20 02 00 00           -  mov ecx,00000220
+// ---------- DONE INJECTING  ----------
+"NBA2K20.exe"+5CDD1F: E8 5C 87 6D 01           -  call NBA2K20.exe+1CA6480
+"NBA2K20.exe"+5CDD24: 48 8B D0                 -  mov rdx,rax
+"NBA2K20.exe"+5CDD27: 48 85 C0                 -  test rax,rax
+"NBA2K20.exe"+5CDD2A: 74 1E                    -  je NBA2K20.exe+5CDD4A
+"NBA2K20.exe"+5CDD2C: C7 00 03 00 00 00        -  mov [rax],00000003
+"NBA2K20.exe"+5CDD32: 0F 10 45 F7              -  movups xmm0,[rbp-09]
+"NBA2K20.exe"+5CDD36: 0F 11 40 08              -  movups [rax+08],xmm0
+"NBA2K20.exe"+5CDD3A: 0F 10 4D 07              -  movups xmm1,[rbp+07]
+"NBA2K20.exe"+5CDD3E: 0F 11 48 18              -  movups [rax+18],xmm1
+"NBA2K20.exe"+5CDD42: 8B 45 17                 -  mov eax,[rbp+17]
+}
+</AssemblerScript>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+  <DisassemblerComments>
+    <DisassemblerComment>
+      <Address>"NBA2K20.exe"+113AB75</Address>
+      <Comment>n
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"NBA2K20.exe"+113AC0C</Address>
+      <Comment>n
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"NBA2K20.exe"+113AC5A</Address>
+      <Comment>n
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"NBA2K20.exe"+113ACE1</Address>
+      <Comment>n
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"NBA2K20.exe"+113AE91</Address>
+      <Comment>n
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"NBA2K20.exe"+113AF01</Address>
+      <Comment>j
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"NBA2K20.exe"+113AF5C</Address>
+      <Comment>j
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"NBA2K20.exe"+12F82A3</Address>
+      <Comment>nnnnnnn
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"NBA2K20.exe"+192C595</Address>
+      <Comment>7
+</Comment>
+    </DisassemblerComment>
+  </DisassemblerComments>
+</CheatTable>

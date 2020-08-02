@@ -1,0 +1,775 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="29">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>4</ID>
+      <Description>"
+Simulate login status"</Description>
+      <Options moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+      <LastState Activated="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{ Game   : NBA2K20.exe
+  Version: 
+  Date   : 2019-09-10
+  Author : Limno
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+aobscanmodule(zaixian2,NBA2K20.exe,8B 40 58 48 83 C4 38 C3) // should be unique
+alloc(newmem,$1000,"NBA2K20.exe"+DB8A71)
+
+label(code)
+label(return)
+
+newmem:
+push rcx
+mov ecx,2
+mov [rax+58],ecx
+pop rcx
+
+code:
+mov eax,[rax+58]
+add rsp,38
+jmp return
+
+zaixian2:
+jmp newmem
+nop
+nop
+return:
+registersymbol(zaixian2)
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+zaixian2:
+  db 8B 40 58 48 83 C4 38
+
+unregistersymbol(zaixian2)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "NBA2K20.exe"+DB8A71
+
+"NBA2K20.exe"+DB8A49: 48 8B 7C 24 30        -  mov rdi,[rsp+30]
+"NBA2K20.exe"+DB8A4E: 48 8B 5C 24 48        -  mov rbx,[rsp+48]
+"NBA2K20.exe"+DB8A53: EB 03                 -  jmp NBA2K20.exe+DB8A58
+"NBA2K20.exe"+DB8A55: 48 8B F5              -  mov rsi,rbp
+"NBA2K20.exe"+DB8A58: 8B 46 58              -  mov eax,[rsi+58]
+"NBA2K20.exe"+DB8A5B: 48 8B 6C 24 50        -  mov rbp,[rsp+50]
+"NBA2K20.exe"+DB8A60: 48 89 35 F1 5A 9B 04  -  mov [NBA2K20.exe+576E558],rsi
+"NBA2K20.exe"+DB8A67: 48 8B 74 24 58        -  mov rsi,[rsp+58]
+"NBA2K20.exe"+DB8A6C: 48 83 C4 38           -  add rsp,38
+"NBA2K20.exe"+DB8A70: C3                    -  ret 
+// ---------- INJECTING HERE ----------
+"NBA2K20.exe"+DB8A71: 8B 40 58              -  mov eax,[rax+58]
+"NBA2K20.exe"+DB8A74: 48 83 C4 38           -  add rsp,38
+// ---------- DONE INJECTING  ----------
+"NBA2K20.exe"+DB8A78: C3                    -  ret 
+"NBA2K20.exe"+DB8A79: CC                    -  int 3 
+"NBA2K20.exe"+DB8A7A: CC                    -  int 3 
+"NBA2K20.exe"+DB8A7B: CC                    -  int 3 
+"NBA2K20.exe"+DB8A7C: CC                    -  int 3 
+"NBA2K20.exe"+DB8A7D: CC                    -  int 3 
+"NBA2K20.exe"+DB8A7E: CC                    -  int 3 
+"NBA2K20.exe"+DB8A7F: CC                    -  int 3 
+"NBA2K20.exe"+DB8A80: B8 DC 26 F2 B7        -  mov eax,B7F226DC
+"NBA2K20.exe"+DB8A85: C3                    -  ret 
+}
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>6</ID>
+          <Description>"模拟登入状态2"</Description>
+          <LastState Activated="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{ Game   : NBA2K20.exe
+  Version: 
+  Date   : 2019-09-10
+  Author : Limno
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+aobscanmodule(zaixian1,NBA2K20.exe,75 07 C7 02 FB 11 5E 13 C3 44 89 41 08 C7 02 A8 21 45 50) // should be unique
+alloc(newmem,$1000,"NBA2K20.exe"+1EF7496)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+mov r8d,1
+mov [rcx+8],r8d
+mov [rdx],135E11FB
+jmp return
+
+zaixian1:
+jmp newmem
+nop
+nop
+nop
+return:
+registersymbol(zaixian1)
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+zaixian1:
+  db 75 07 C7 02 FB 11 5E 13
+
+unregistersymbol(zaixian1)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "NBA2K20.exe"+1EF7496
+
+"NBA2K20.exe"+1EF7488: CC                          -  int 3 
+"NBA2K20.exe"+1EF7489: CC                          -  int 3 
+"NBA2K20.exe"+1EF748A: CC                          -  int 3 
+"NBA2K20.exe"+1EF748B: CC                          -  int 3 
+"NBA2K20.exe"+1EF748C: CC                          -  int 3 
+"NBA2K20.exe"+1EF748D: CC                          -  int 3 
+"NBA2K20.exe"+1EF748E: CC                          -  int 3 
+"NBA2K20.exe"+1EF748F: CC                          -  int 3 
+"NBA2K20.exe"+1EF7490: 48 8B C2                    -  mov rax,rdx
+"NBA2K20.exe"+1EF7493: 48 85 C9                    -  test rcx,rcx
+// ---------- INJECTING HERE ----------
+"NBA2K20.exe"+1EF7496: 75 07                       -  jne NBA2K20.exe+1EF749F
+"NBA2K20.exe"+1EF7498: C7 02 FB 11 5E 13           -  mov [rdx],135E11FB
+// ---------- DONE INJECTING  ----------
+"NBA2K20.exe"+1EF749E: C3                          -  ret 
+"NBA2K20.exe"+1EF749F: 44 89 41 08                 -  mov [rcx+08],r8d
+"NBA2K20.exe"+1EF74A3: C7 02 A8 21 45 50           -  mov [rdx],504521A8
+"NBA2K20.exe"+1EF74A9: C3                          -  ret 
+"NBA2K20.exe"+1EF74AA: CC                          -  int 3 
+"NBA2K20.exe"+1EF74AB: CC                          -  int 3 
+"NBA2K20.exe"+1EF74AC: CC                          -  int 3 
+"NBA2K20.exe"+1EF74AD: CC                          -  int 3 
+"NBA2K20.exe"+1EF74AE: CC                          -  int 3 
+"NBA2K20.exe"+1EF74AF: CC                          -  int 3 
+}
+</AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>35</ID>
+      <Description>"Unlock all actions of MC--11.16 Old version will jump out"</Description>
+      <LastState Activated="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{ Game   : NBA2K20.exe
+  Version:
+  Date   : 2019-09-19
+  Author : Limno
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+aobscanmodule(MCDONGZUO,NBA2K20.exe,39 07 BB 01 00 00 00) // should be unique
+MCDONGZUO-2:
+db eb
+MCDONGZUO+2a:
+db 90 90 90 90
+registersymbol(MCDONGZUO)
+
+[DISABLE]
+MCDONGZUO-2:
+db 75
+MCDONGZUO+2a:
+db 41 0f 44 de
+
+unregistersymbol(MCDONGZUO)
+{
+// ORIGINAL CODE - INJECTION POINT: "NBA2K20.exe"+5CDD1A
+
+"NBA2K20.exe"+5CDCED: 83 F8 03                 -  cmp eax,03
+"NBA2K20.exe"+5CDCF0: 75 63                    -  jne NBA2K20.exe+5CDD55
+"NBA2K20.exe"+5CDCF2: B1 05                    -  mov cl,05
+"NBA2K20.exe"+5CDCF4: E8 B7 B8 0E 01           -  call NBA2K20.exe+16B95B0
+"NBA2K20.exe"+5CDCF9: 44 89 64 24 30           -  mov [rsp+30],r12d
+"NBA2K20.exe"+5CDCFE: 41 B9 F6 16 0A 6A        -  mov r9d,6A0A16F6
+"NBA2K20.exe"+5CDD04: C7 44 24 28 08 00 00 00  -  mov [rsp+28],00000008
+"NBA2K20.exe"+5CDD0C: 45 33 C0                 -  xor r8d,r8d
+"NBA2K20.exe"+5CDD0F: 48 8B D0                 -  mov rdx,rax
+"NBA2K20.exe"+5CDD12: C7 44 24 20 62 06 00 00  -  mov [rsp+20],00000662
+// ---------- INJECTING HERE ----------
+"NBA2K20.exe"+5CDD1A: B9 20 02 00 00           -  mov ecx,00000220
+// ---------- DONE INJECTING  ----------
+"NBA2K20.exe"+5CDD1F: E8 5C 87 6D 01           -  call NBA2K20.exe+1CA6480
+"NBA2K20.exe"+5CDD24: 48 8B D0                 -  mov rdx,rax
+"NBA2K20.exe"+5CDD27: 48 85 C0                 -  test rax,rax
+"NBA2K20.exe"+5CDD2A: 74 1E                    -  je NBA2K20.exe+5CDD4A
+"NBA2K20.exe"+5CDD2C: C7 00 03 00 00 00        -  mov [rax],00000003
+"NBA2K20.exe"+5CDD32: 0F 10 45 F7              -  movups xmm0,[rbp-09]
+"NBA2K20.exe"+5CDD36: 0F 11 40 08              -  movups [rax+08],xmm0
+"NBA2K20.exe"+5CDD3A: 0F 10 4D 07              -  movups xmm1,[rbp+07]
+"NBA2K20.exe"+5CDD3E: 0F 11 48 18              -  movups [rax+18],xmm1
+"NBA2K20.exe"+5CDD42: 8B 45 17                 -  mov eax,[rbp+17]
+}
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>36</ID>
+      <Description>"Unlock all MC actions-used in older versions
+"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{ Game   : NBA2K20.exe
+  Version: 
+  Date   : 2019-09-19
+  Author : Limno
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+aobscanmodule(MCDONGZUO,NBA2K20.exe,39 07 BB 01 00 00 00) // should be unique
+MCDONGZUO-2:
+db eb
+MCDONGZUO+1c:
+db 90 90 90
+registersymbol(MCDONGZUO)
+
+[DISABLE]
+MCDONGZUO-2:
+db 75
+MCDONGZUO+1c:
+db 0f 44 dd
+
+unregistersymbol(MCDONGZUO)
+{
+// ORIGINAL CODE - INJECTION POINT: "NBA2K20.exe"+5CDD1A
+
+"NBA2K20.exe"+5CDCED: 83 F8 03                 -  cmp eax,03
+"NBA2K20.exe"+5CDCF0: 75 63                    -  jne NBA2K20.exe+5CDD55
+"NBA2K20.exe"+5CDCF2: B1 05                    -  mov cl,05
+"NBA2K20.exe"+5CDCF4: E8 B7 B8 0E 01           -  call NBA2K20.exe+16B95B0
+"NBA2K20.exe"+5CDCF9: 44 89 64 24 30           -  mov [rsp+30],r12d
+"NBA2K20.exe"+5CDCFE: 41 B9 F6 16 0A 6A        -  mov r9d,6A0A16F6
+"NBA2K20.exe"+5CDD04: C7 44 24 28 08 00 00 00  -  mov [rsp+28],00000008
+"NBA2K20.exe"+5CDD0C: 45 33 C0                 -  xor r8d,r8d
+"NBA2K20.exe"+5CDD0F: 48 8B D0                 -  mov rdx,rax
+"NBA2K20.exe"+5CDD12: C7 44 24 20 62 06 00 00  -  mov [rsp+20],00000662
+// ---------- INJECTING HERE ----------
+"NBA2K20.exe"+5CDD1A: B9 20 02 00 00           -  mov ecx,00000220
+// ---------- DONE INJECTING  ----------
+"NBA2K20.exe"+5CDD1F: E8 5C 87 6D 01           -  call NBA2K20.exe+1CA6480
+"NBA2K20.exe"+5CDD24: 48 8B D0                 -  mov rdx,rax
+"NBA2K20.exe"+5CDD27: 48 85 C0                 -  test rax,rax
+"NBA2K20.exe"+5CDD2A: 74 1E                    -  je NBA2K20.exe+5CDD4A
+"NBA2K20.exe"+5CDD2C: C7 00 03 00 00 00        -  mov [rax],00000003
+"NBA2K20.exe"+5CDD32: 0F 10 45 F7              -  movups xmm0,[rbp-09]
+"NBA2K20.exe"+5CDD36: 0F 11 40 08              -  movups [rax+08],xmm0
+"NBA2K20.exe"+5CDD3A: 0F 10 4D 07              -  movups xmm1,[rbp+07]
+"NBA2K20.exe"+5CDD3E: 0F 11 48 18              -  movups [rax+18],xmm1
+"NBA2K20.exe"+5CDD42: 8B 45 17                 -  mov eax,[rbp+17]
+}
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>9</ID>
+      <Description>"Template max"</Description>
+      <LastState Activated="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{ Game   : NBA2K20.exe
+  Version: 
+  Date   : 2019-09-10
+  Author : Limno
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+aobscanmodule(muban,NBA2K20.exe,0F 4C C6 48 8B 74 24 70) // should be unique
+alloc(newmem,$1000,"NBA2K20.exe"+17D1482)
+
+label(code)
+label(return)
+
+newmem:
+
+code:
+//cmovl eax,esi
+mov rsi,[rsp+70]
+jmp return
+
+muban:
+  jmp newmem
+nop
+nop
+nop
+return:
+registersymbol(muban)
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+muban:
+  db 0F 4C C6 48 8B 74 24 70
+
+unregistersymbol(muban)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "NBA2K20.exe"+17D1482
+
+"NBA2K20.exe"+17D145C: 44 0F 28 4C 24 30           -  movaps xmm9,[rsp+30]
+"NBA2K20.exe"+17D1462: 66 0F 6E C8                 -  movd xmm1,eax
+"NBA2K20.exe"+17D1466: 0F 5B C9                    -  cvtdq2ps xmm1,xmm1
+"NBA2K20.exe"+17D1469: F3 0F 59 C1                 -  mulss xmm0,xmm1
+"NBA2K20.exe"+17D146D: F3 0F 58 05 FF F6 88 00     -  addss xmm0,[NBA2K20.exe+2060B74]
+"NBA2K20.exe"+17D1475: F3 0F 2D C0                 -  cvtss2si eax,xmm0
+"NBA2K20.exe"+17D1479: 3B C6                       -  cmp eax,esi
+"NBA2K20.exe"+17D147B: 0F 4F F0                    -  cmovg esi,eax
+"NBA2K20.exe"+17D147E: 8B C1                       -  mov eax,ecx
+"NBA2K20.exe"+17D1480: 3B F1                       -  cmp esi,ecx
+// ---------- INJECTING HERE ----------
+"NBA2K20.exe"+17D1482: 0F 4C C6                    -  cmovl eax,esi
+"NBA2K20.exe"+17D1485: 48 8B 74 24 70              -  mov rsi,[rsp+70]
+// ---------- DONE INJECTING  ----------
+"NBA2K20.exe"+17D148A: 3B E9                       -  cmp ebp,ecx
+"NBA2K20.exe"+17D148C: 0F 4C CD                    -  cmovl ecx,ebp
+"NBA2K20.exe"+17D148F: 48 8B 6C 24 68              -  mov rbp,[rsp+68]
+"NBA2K20.exe"+17D1494: 2B C1                       -  sub eax,ecx
+"NBA2K20.exe"+17D1496: FF C0                       -  inc eax
+"NBA2K20.exe"+17D1498: 48 83 C4 40                 -  add rsp,40
+"NBA2K20.exe"+17D149C: 41 5F                       -  pop r15
+"NBA2K20.exe"+17D149E: 41 5E                       -  pop r14
+"NBA2K20.exe"+17D14A0: 41 5C                       -  pop r12
+"NBA2K20.exe"+17D14A2: C3                          -  ret 
+}
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>30</ID>
+      <Description>"
+Fixed MC without protective gear"</Description>
+      <LastState Activated="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{ Game   : NBA2K20.exe
+  Version: 
+  Date   : 2019-09-16
+  Author : Limno
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+aobscanmodule(MCHUJU,NBA2K20.exe,41 8B C7 48 83 C4 50 41 5F 41 5E 41 5C 5F 5E 5D 5B C3) // should be unique
+MCHUJU:
+db 31 C0 90
+registersymbol(MCHUJU)
+
+[DISABLE]
+MCHUJU:
+db 41 8B C7
+unregistersymbol(MCHUJU)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "NBA2K20.exe"+E4B8EB
+
+"NBA2K20.exe"+E4B8CB: 75 0A                       -  jne NBA2K20.exe+E4B8D7
+"NBA2K20.exe"+E4B8CD: 48 FF C7                    -  inc rdi
+"NBA2K20.exe"+E4B8D0: 48 3B FD                    -  cmp rdi,rbp
+"NBA2K20.exe"+E4B8D3: 7C CB                       -  jl NBA2K20.exe+E4B8A0
+"NBA2K20.exe"+E4B8D5: EB 06                       -  jmp NBA2K20.exe+E4B8DD
+"NBA2K20.exe"+E4B8D7: 41 BC EC EB 10 BF           -  mov r12d,BF10EBEC
+"NBA2K20.exe"+E4B8DD: 45 33 C0                    -  xor r8d,r8d
+"NBA2K20.exe"+E4B8E0: 41 8B D4                    -  mov edx,r12d
+"NBA2K20.exe"+E4B8E3: 48 8B CE                    -  mov rcx,rsi
+"NBA2K20.exe"+E4B8E6: E8 85 A9 FF FF              -  call NBA2K20.exe+E46270
+// ---------- INJECTING HERE ----------
+"NBA2K20.exe"+E4B8EB: 41 8B C7                    -  mov eax,r15d
+"NBA2K20.exe"+E4B8EE: 48 83 C4 50                 -  add rsp,50
+// ---------- DONE INJECTING  ----------
+"NBA2K20.exe"+E4B8F2: 41 5F                       -  pop r15
+"NBA2K20.exe"+E4B8F4: 41 5E                       -  pop r14
+"NBA2K20.exe"+E4B8F6: 41 5C                       -  pop r12
+"NBA2K20.exe"+E4B8F8: 5F                          -  pop rdi
+"NBA2K20.exe"+E4B8F9: 5E                          -  pop rsi
+"NBA2K20.exe"+E4B8FA: 5D                          -  pop rbp
+"NBA2K20.exe"+E4B8FB: 5B                          -  pop rbx
+"NBA2K20.exe"+E4B8FC: C3                          -  ret 
+"NBA2K20.exe"+E4B8FD: 0F 1F 00                    -  nop [rax]
+"NBA2K20.exe"+E4B900: F6 AF E4 00 EC B1           -  imul byte ptr [rdi-4E13FF1C]
+}
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>16</ID>
+      <Description>"MC default camera changed to broadcast universal
+"</Description>
+      <LastState Activated="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{ Game   : NBA2K20.exe
+  Version:
+  Date   : 2019-09-10
+  Author : Limno
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+aobscanmodule(jingtou,NBA2K20.exe,75 02 89 2E FF C3) // should be unique
+alloc(newmem,$1000,"NBA2K20.exe"+964B5A)
+
+label(code)
+label(return)
+label(exit2)
+
+newmem:
+jne exit2
+
+code:
+mov ebp,1
+//1转播通用
+//2转播
+//3转播低位
+//........一直到31
+mov [rsi],ebp
+exit2:
+inc ebx
+jmp return
+
+jingtou:
+jmp newmem
+nop
+return:
+registersymbol(jingtou)
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+jingtou:
+  db 75 02 89 2E FF C3
+
+unregistersymbol(jingtou)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "NBA2K20.exe"+964B5A
+
+"NBA2K20.exe"+964B32: 8B 4C 24 70              -  mov ecx,[rsp+70]
+"NBA2K20.exe"+964B36: 48 63 C1                 -  movsxd  rax,ecx
+"NBA2K20.exe"+964B39: 48 8D 35 90 9F F7 03     -  lea rsi,[NBA2K20.exe+48DEAD0]
+"NBA2K20.exe"+964B40: 89 6C 87 70              -  mov [rdi+rax*4+70],ebp
+"NBA2K20.exe"+964B44: 8B CB                    -  mov ecx,ebx
+"NBA2K20.exe"+964B46: E8 15 32 15 00           -  call NBA2K20.exe+AB7D60
+"NBA2K20.exe"+964B4B: 8B 4C 24 70              -  mov ecx,[rsp+70]
+"NBA2K20.exe"+964B4F: 48 8B F8                 -  mov rdi,rax
+"NBA2K20.exe"+964B52: E8 09 32 15 00           -  call NBA2K20.exe+AB7D60
+"NBA2K20.exe"+964B57: 48 3B F8                 -  cmp rdi,rax
+// ---------- INJECTING HERE ----------
+"NBA2K20.exe"+964B5A: 75 02                    -  jne NBA2K20.exe+964B5E
+"NBA2K20.exe"+964B5C: 89 2E                    -  mov [rsi],ebp
+"NBA2K20.exe"+964B5E: FF C3                    -  inc ebx
+// ---------- DONE INJECTING  ----------
+"NBA2K20.exe"+964B60: 48 83 C6 04              -  add rsi,04
+"NBA2K20.exe"+964B64: 83 FB 0F                 -  cmp ebx,0F
+"NBA2K20.exe"+964B67: 7C DB                    -  jl NBA2K20.exe+964B44
+"NBA2K20.exe"+964B69: 48 8B B4 24 80 00 00 00  -  mov rsi,[rsp+00000080]
+"NBA2K20.exe"+964B71: 48 8B 5C 24 78           -  mov rbx,[rsp+78]
+"NBA2K20.exe"+964B76: 48 8B BC 24 88 00 00 00  -  mov rdi,[rsp+00000088]
+"NBA2K20.exe"+964B7E: 48 83 C4 60              -  add rsp,60
+"NBA2K20.exe"+964B82: 5D                       -  pop rbp
+"NBA2K20.exe"+964B83: C3                       -  ret
+"NBA2K20.exe"+964B84: CC                       -  int 3
+}
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>19</ID>
+      <Description>"Comprehensive evaluation"</Description>
+      <Options moHideChildren="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+      <LastState Activated="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{ Game   : NBA2K20.exe
+  Version: 
+  Date   : 2019-09-14
+  Author : Limno
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+aobscanmodule(zongping,NBA2K20.exe,89 06 FF C3 48 83 C6 04 83 FB 17) // should be unique
+alloc(newmem,$1000,"NBA2K20.exe"+110FE3E)
+
+label(code)
+label(code2)
+label(return)
+
+newmem:
+push rsi
+push rax
+push rcx
+
+mov rcx,e8
+mov rsi,[rdi+000000E0]
+
+code2:
+mov al,ff
+mov [rsi+rcx],al
+add rcx,2
+cmp rcx,10a
+jbe code2
+
+pop rcx
+pop rax
+pop rsi
+
+code:
+mov [rsi],eax
+inc ebx
+add rsi,04
+jmp return
+
+zongping:
+  jmp newmem
+  nop 3
+return:
+registersymbol(zongping)
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+zongping:
+  db 89 06 FF C3 48 83 C6 04
+
+unregistersymbol(zongping)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "NBA2K20.exe"+110FE3E
+
+"NBA2K20.exe"+110FE0C: 48 8B 87 E0 00 00 00  -  mov rax,[rdi+000000E0]
+"NBA2K20.exe"+110FE13: 0F B6 80 06 01 00 00  -  movzx eax,byte ptr [rax+00000106]
+"NBA2K20.exe"+110FE1A: EB 22                 -  jmp NBA2K20.exe+110FE3E
+"NBA2K20.exe"+110FE1C: 48 8B 87 E0 00 00 00  -  mov rax,[rdi+000000E0]
+"NBA2K20.exe"+110FE23: 0F B6 80 08 01 00 00  -  movzx eax,byte ptr [rax+00000108]
+"NBA2K20.exe"+110FE2A: EB 12                 -  jmp NBA2K20.exe+110FE3E
+"NBA2K20.exe"+110FE2C: 48 8B 87 E0 00 00 00  -  mov rax,[rdi+000000E0]
+"NBA2K20.exe"+110FE33: 0F B6 80 0A 01 00 00  -  movzx eax,byte ptr [rax+0000010A]
+"NBA2K20.exe"+110FE3A: EB 02                 -  jmp NBA2K20.exe+110FE3E
+"NBA2K20.exe"+110FE3C: 8B C5                 -  mov eax,ebp
+// ---------- INJECTING HERE ----------
+"NBA2K20.exe"+110FE3E: 89 06                 -  mov [rsi],eax
+"NBA2K20.exe"+110FE40: FF C3                 -  inc ebx
+"NBA2K20.exe"+110FE42: 48 83 C6 04           -  add rsi,04
+// ---------- DONE INJECTING  ----------
+"NBA2K20.exe"+110FE46: 83 FB 17              -  cmp ebx,17
+"NBA2K20.exe"+110FE49: 0F 8E E3 FD FF FF     -  jng NBA2K20.exe+110FC32
+"NBA2K20.exe"+110FE4F: 4C 8D 5C 24 70        -  lea r11,[rsp+70]
+"NBA2K20.exe"+110FE54: 49 8B 5B 30           -  mov rbx,[r11+30]
+"NBA2K20.exe"+110FE58: 49 8B 6B 38           -  mov rbp,[r11+38]
+"NBA2K20.exe"+110FE5C: 49 8B 73 40           -  mov rsi,[r11+40]
+"NBA2K20.exe"+110FE60: 49 8B E3              -  mov rsp,r11
+"NBA2K20.exe"+110FE63: 41 5F                 -  pop r15
+"NBA2K20.exe"+110FE65: 41 5E                 -  pop r14
+"NBA2K20.exe"+110FE67: 41 5D                 -  pop r13
+}
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>20</ID>
+          <Description>"Comprehensive evaluation cap"</Description>
+          <LastState Activated="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{ Game   : NBA2K20.exe
+  Version: 
+  Date   : 2019-09-14
+  Author : Limno
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+aobscanmodule(zongpingcap,NBA2K20.exe,0F 4C C8 41 3B E8 44 0F 4C C5 44 3B C1 41 0F 4F C8 66 0F 6E C1 0F 5B C8 66 0F 3A 0A C9 01 F3 0F 2D E9 83 FD 55) // should be unique
+
+zongpingcap:
+db 90 90 90
+
+registersymbol(zongpingcap)
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+zongpingcap:
+db 0f 4c c8
+
+unregistersymbol(zongpingcap)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "NBA2K20.exe"+17D389D
+
+"NBA2K20.exe"+17D3884: 41 8B C0                 -  mov eax,r8d
+"NBA2K20.exe"+17D3887: 2B C5                    -  sub eax,ebp
+"NBA2K20.exe"+17D3889: 0F AF C3                 -  imul eax,ebx
+"NBA2K20.exe"+17D388C: 99                       -  cdq 
+"NBA2K20.exe"+17D388D: 41 F7 FA                 -  idiv r10d
+"NBA2K20.exe"+17D3890: 8D 0C 28                 -  lea ecx,[rax+rbp]
+"NBA2K20.exe"+17D3893: 41 8B C0                 -  mov eax,r8d
+"NBA2K20.exe"+17D3896: 3B E8                    -  cmp ebp,eax
+"NBA2K20.exe"+17D3898: 0F 4F C5                 -  cmovg eax,ebp
+"NBA2K20.exe"+17D389B: 3B C1                    -  cmp eax,ecx
+// ---------- INJECTING HERE ----------
+"NBA2K20.exe"+17D389D: 0F 4C C8                 -  cmovl ecx,eax
+"NBA2K20.exe"+17D38A0: 41 3B E8                 -  cmp ebp,r8d
+// ---------- DONE INJECTING  ----------
+"NBA2K20.exe"+17D38A3: 44 0F 4C C5              -  cmovl r8d,ebp
+"NBA2K20.exe"+17D38A7: 44 3B C1                 -  cmp r8d,ecx
+"NBA2K20.exe"+17D38AA: 41 0F 4F C8              -  cmovg ecx,r8d
+"NBA2K20.exe"+17D38AE: 66 0F 6E C1              -  movd xmm0,ecx
+"NBA2K20.exe"+17D38B2: 0F 5B C8                 -  cvtdq2ps xmm1,xmm0
+"NBA2K20.exe"+17D38B5: 66 0F 3A 0A C9 01        -  roundss xmm1,xmm1,01
+"NBA2K20.exe"+17D38BB: F3 0F 2D E9              -  cvtss2si ebp,xmm1
+"NBA2K20.exe"+17D38BF: 83 FD 55                 -  cmp ebp,55
+"NBA2K20.exe"+17D38C2: 0F 8C C8 00 00 00        -  jl NBA2K20.exe+17D3990
+"NBA2K20.exe"+17D38C8: 41 2B DA                 -  sub ebx,r10d
+}
+</AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>14</ID>
+      <Description>"
+Full MC ability points"</Description>
+      <LastState Activated="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>{ Game   : NBA2K20.exe
+  Version: 
+  Date   : 2019-09-10
+  Author : Limno
+
+  This script does blah blah blah
+}
+
+[ENABLE]
+aobscanmodule(nenglidianshu,NBA2K20.exe,0F B6 84 03 38 23 01 00) // should be unique
+alloc(newmem,$1000,"NBA2K20.exe"+111038E)
+
+label(code)
+label(return)
+
+newmem:
+push rcx
+mov cl,4A
+mov [rbx+rax+00012338],cl
+pop rcx
+
+code:
+movzx eax,byte ptr [rbx+rax+00012338]
+jmp return
+
+nenglidianshu:
+jmp newmem
+nop
+nop
+nop
+
+return:
+registersymbol(nenglidianshu)
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+nenglidianshu:
+  db 0F B6 84 03 38 23 01 00
+
+unregistersymbol(nenglidianshu)
+dealloc(newmem)
+
+{
+// ORIGINAL CODE - INJECTION POINT: "NBA2K20.exe"+111038E
+
+"NBA2K20.exe"+111035D: 48 89 44 24 30           -  mov [rsp+30],rax
+"NBA2K20.exe"+1110362: 48 8D 0D B7 56 73 01     -  lea rcx,[NBA2K20.exe+2845A20]
+"NBA2K20.exe"+1110369: 48 8D 05 20 56 73 01     -  lea rax,[NBA2K20.exe+2845990]
+"NBA2K20.exe"+1110370: C7 44 24 28 67 00 00 00  -  mov [rsp+28],00000067
+"NBA2K20.exe"+1110378: 48 89 44 24 20           -  mov [rsp+20],rax
+"NBA2K20.exe"+111037D: E8 3E E9 BA 00           -  call NBA2K20.exe+1CBECC0
+"NBA2K20.exe"+1110382: 85 C0                    -  test eax,eax
+"NBA2K20.exe"+1110384: 74 01                    -  je NBA2K20.exe+1110387
+"NBA2K20.exe"+1110386: CC                       -  int 3 
+"NBA2K20.exe"+1110387: 48 8B 05 BA 1F 74 04     -  mov rax,[NBA2K20.exe+5852348]
+// ---------- INJECTING HERE ----------
+"NBA2K20.exe"+111038E: 0F B6 84 03 38 23 01 00  -  movzx eax,byte ptr [rbx+rax+00012338]
+// ---------- DONE INJECTING  ----------
+"NBA2K20.exe"+1110396: 48 83 C4 70              -  add rsp,70
+"NBA2K20.exe"+111039A: 5B                       -  pop rbx
+"NBA2K20.exe"+111039B: C3                       -  ret 
+"NBA2K20.exe"+111039C: CC                       -  int 3 
+"NBA2K20.exe"+111039D: CC                       -  int 3 
+"NBA2K20.exe"+111039E: CC                       -  int 3 
+"NBA2K20.exe"+111039F: CC                       -  int 3 
+"NBA2K20.exe"+11103A0: 45 33 C0                 -  xor r8d,r8d
+"NBA2K20.exe"+11103A3: E9 48 71 73 FF           -  jmp NBA2K20.exe+8474F0
+"NBA2K20.exe"+11103A8: CC                       -  int 3 
+}
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>12</ID>
+      <Description>"All features are only available in offline version
+"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+NBA2K20.exe+4BF23E:
+db 3c c0 90
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+</AssemblerScript>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+  <DisassemblerComments>
+    <DisassemblerComment>
+      <Address>"NBA2K20.exe"+113AB75</Address>
+      <Comment>n
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"NBA2K20.exe"+113AC0C</Address>
+      <Comment>n
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"NBA2K20.exe"+113AC5A</Address>
+      <Comment>n
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"NBA2K20.exe"+113ACE1</Address>
+      <Comment>n
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"NBA2K20.exe"+113AE91</Address>
+      <Comment>n
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"NBA2K20.exe"+113AF01</Address>
+      <Comment>j
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"NBA2K20.exe"+113AF5C</Address>
+      <Comment>j
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"NBA2K20.exe"+12F82A3</Address>
+      <Comment>nnnnnnn
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"NBA2K20.exe"+192C595</Address>
+      <Comment>7
+</Comment>
+    </DisassemblerComment>
+  </DisassemblerComments>
+</CheatTable>
